@@ -7,7 +7,7 @@ TOOL_NAME="heroku-cli"
 TOOL_TEST="heroku --help"
 
 fail() {
-  echo -e "asdf-$TOOL_NAME: $*"
+  echo -e "mise-$TOOL_NAME: $*"
   exit 1
 }
 
@@ -59,7 +59,8 @@ download_release() {
     exit 1
   fi
 
-  url="https://cli-assets.heroku.com/heroku-v${version}/heroku-v${version}-${OS}-${ARCH}.tar.gz"
+  # url="https://cli-assets.heroku.com/heroku-v${version}/heroku-v${version}-${OS}-${ARCH}.tar.gz"
+  url = "https://cli-assets.heroku.com/channels/stable/heroku-${OS}-${ARCH}.tar.gz"
 
   echo "* Downloading $TOOL_NAME release $version..."
   curl "${curl_opts[@]}" -o "$filename" -C - "$url" || fail "Could not download $url"
@@ -71,7 +72,7 @@ install_version() {
   local install_path="$3"
 
   if [ "$install_type" != "version" ]; then
-    fail "asdf-$TOOL_NAME supports release installs only"
+    fail "mise-$TOOL_NAME supports release installs only"
   fi
 
   (
