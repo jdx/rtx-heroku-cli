@@ -60,7 +60,7 @@ download_release() {
   fi
 
   # url="https://cli-assets.heroku.com/heroku-v${version}/heroku-v${version}-${OS}-${ARCH}.tar.gz"
-  url = "https://cli-assets.heroku.com/channels/stable/heroku-${OS}-${ARCH}.tar.gz"
+  url= "https://cli-assets.heroku.com/channels/stable/heroku-${OS}-${ARCH}.tar.gz"
 
   echo "* Downloading $TOOL_NAME release $version..."
   curl "${curl_opts[@]}" -o "$filename" -C - "$url" || fail "Could not download $url"
